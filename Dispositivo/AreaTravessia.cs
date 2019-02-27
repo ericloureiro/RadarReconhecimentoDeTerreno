@@ -15,19 +15,21 @@ namespace Dispositivo
         public List<string> SobrescreverTexto = new List<string>();
         public void PodePassar(int[,] matrizAgua, int[,] matrizObstaculo, int[,] matrizMinaTerrestre)
         {
+            bool podePassar = true;
             for (int i = 0; i < matrizAgua.GetLength(0); i++) //VERIFICAÇÃO DE LINHAS
             {
                 for (int j = 0; j < matrizAgua.GetLength(1); j++)
                 {
                     if (matrizAgua[i, j] > 1 || matrizObstaculo[i, j] != 0)
                     {
+                        podePassar = false;
                         break;
                     }
-                    if (j == matrizAgua.GetLength(1) - 1)
+                }
+                if (podePassar)
                     {
                         PossiveisLinhas.Add(i);
                     }
-                }
             }
             for (int j = 0; j < matrizAgua.GetLength(1); j++) //VERIFICAÇÃO DE COLUNAS
             {
@@ -35,13 +37,14 @@ namespace Dispositivo
                 {
                     if (matrizAgua[i, j] > 1 || matrizObstaculo[i, j] != 0)
                     {
+                        podePassar = false;
                         break;
                     }
-                    if (i == matrizAgua.GetLength(1) - 1)
+                }
+                if (podePassar)
                     {
                         PossiveisColunas.Add(j);
                     }
-                }
             }
             SomaLinCol.AddRange(PossiveisLinhas);
             SomaLinCol.AddRange(PossiveisColunas);
