@@ -11,15 +11,15 @@ namespace Dispositivo
         private List<int> PossiveisLinhas = new List<int>();
         private List<int> PossiveisColunas = new List<int>();
         private List<int> SomaLinCol = new List<int>();
-        public string PodePassar(int[,] matrizAgua, int[,] matrizObstaculo, int[,] matrizMinaTerrestre)
+        public void PodePassar(Dispositivo d)
         {
             var resultado = new StringBuilder();
             var podePassar = true;
-            for (int i = 0; i < matrizAgua.GetLength(0); i++)
+            for (int i = 0; i < d.MatrizAgua.GetLength(0); i++)
             {
-                for (int j = 0; j < matrizAgua.GetLength(1); j++)
+                for (int j = 0; j < d.MatrizAgua.GetLength(1); j++)
                 {
-                    if (matrizAgua[i, j] > 1 || matrizObstaculo[i, j] != 0)
+                    if (d.MatrizAgua[i, j] > 1 || d.MatrizObstaculo[i, j] != 0)
                     {
                         podePassar = false;
                         break;
@@ -30,11 +30,11 @@ namespace Dispositivo
                     PossiveisLinhas.Add(i);
                 }
             }
-            for (int j = 0; j < matrizAgua.GetLength(1); j++)
+            for (int j = 0; j < d.MatrizAgua.GetLength(1); j++)
             {
-                for (int i = 0; i < matrizAgua.GetLength(0); i++)
+                for (int i = 0; i < d.MatrizAgua.GetLength(0); i++)
                 {
-                    if (matrizAgua[i, j] > 1 || matrizObstaculo[i, j] != 0)
+                    if (d.MatrizAgua[i, j] > 1 || d.MatrizObstaculo[i, j] != 0)
                     {
                         podePassar = false;
                         break;
@@ -64,26 +64,28 @@ namespace Dispositivo
                 var perigo = 0.0;
                 if (PossiveisLinhas.Count == 1)
                 {
-                    for (int j = 0; j < matrizMinaTerrestre.GetLength(1); j++)
+                    for (int j = 0; j < d.MatrizMinaTerrestre.GetLength(1); j++)
                     {
-                        perigo += matrizMinaTerrestre[PossiveisLinhas.ElementAt(0), j];
+                        perigo += d.MatrizMinaTerrestre[PossiveisLinhas.ElementAt(0), j];
                     }
-                    resultado.AppendLine(String.Format(DispositivoReconhecimentoTerrenoResource.MENSAGEM_TRAVESSIA_LINHA, PossiveisLinhas.FirstOrDefault() +1, (perigo / matrizMinaTerrestre.GetLength(0)).ToString("F2")));
+                    resultado.AppendLine(String.Format(DispositivoReconhecimentoTerrenoResource.MENSAGEM_TRAVESSIA_LINHA, PossiveisLinhas.FirstOrDefault() +1,
+                        (perigo / d.MatrizMinaTerrestre.GetLength(0)).ToString("F2")));
                 }
                 else if (PossiveisColunas.Count == 1)
                 {
-                    for (int i = 0; i < matrizMinaTerrestre.GetLength(0); i++)
+                    for (int i = 0; i < d.MatrizMinaTerrestre.GetLength(0); i++)
                     {
-                        perigo += matrizMinaTerrestre[i, PossiveisColunas.ElementAt(0)];
+                        perigo += d.MatrizMinaTerrestre[i, PossiveisColunas.ElementAt(0)];
                     }
-                    resultado.AppendLine(String.Format(DispositivoReconhecimentoTerrenoResource.MENSAGEM_TRAVESSIA_COLUNA, PossiveisColunas.FirstOrDefault() +1, (perigo / matrizMinaTerrestre.GetLength(1)).ToString("F2")));
+                    resultado.AppendLine(String.Format(DispositivoReconhecimentoTerrenoResource.MENSAGEM_TRAVESSIA_COLUNA, PossiveisColunas.FirstOrDefault() +1,
+                        (perigo / d.MatrizMinaTerrestre.GetLength(1)).ToString("F2")));
                 }
             }
             else
             {
                 resultado.AppendLine(DispositivoReconhecimentoTerrenoResource.MENSAGEM_TRAVESSIA_INEXISTENTE);
             }
-            return resultado.ToString();
+            d.Mensagens.Add(resultado.ToString());
         }
     }
 }

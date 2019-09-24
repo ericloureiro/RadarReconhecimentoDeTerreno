@@ -5,23 +5,23 @@ namespace Dispositivo
 {
     public class VerificaAreaIlhotaService
     {
-        public string TemIlhota(int[,] matrizAgua, int[,] matrizObstaculo, int[,] matrizMinaTerrestre)
+        public void TemIlhota(Dispositivo d)
         {
-            for (int i = 0; i < matrizAgua.GetLength(0); i++)
+            for (int i = 0; i < d.MatrizAgua.GetLength(0); i++)
             {
-                for (int j = 0; j < matrizAgua.GetLength(1); j++)
+                for (int j = 0; j < d.MatrizAgua.GetLength(1); j++)
                 {
-                    if (matrizObstaculo[i, j] == 0 && matrizMinaTerrestre[i, j] == 0 && matrizAgua[i, j] == 0 &&
-                        j > 0 && i > 0 && j < matrizAgua.GetLength(1) - 1 && i < matrizAgua.GetLength(0) - 1 &&
-                        matrizAgua[i, j - 1] > 0 && matrizAgua[i - 1, j - 1] > 0 && matrizAgua[i + 1, j - 1] > 0 &&
-                        matrizAgua[i, j + 1] > 0 && matrizAgua[i - 1, j + 1] > 0 && matrizAgua[i + 1, j + 1] > 0
-                        && matrizAgua[i - 1, j] > 0 && matrizAgua[i + 1, j] > 0)
+                    if (d.MatrizObstaculo[i, j] == 0 && d.MatrizMinaTerrestre[i, j] == 0 && d.MatrizAgua[i, j] == 0 &&
+                        j > 0 && i > 0 && j < d.MatrizAgua.GetLength(1) - 1 && i < d.MatrizAgua.GetLength(0) - 1 &&
+                        d.MatrizAgua[i, j - 1] > 0 && d.MatrizAgua[i - 1, j - 1] > 0 && d.MatrizAgua[i + 1, j - 1] > 0 &&
+                        d.MatrizAgua[i, j + 1] > 0 && d.MatrizAgua[i - 1, j + 1] > 0 && d.MatrizAgua[i + 1, j + 1] > 0
+                        && d.MatrizAgua[i - 1, j] > 0 && d.MatrizAgua[i + 1, j] > 0)
                     {
-                        return String.Format(DispositivoReconhecimentoTerrenoResource.MENSAGEM_ILHOTA_ESTRATEGICA, i + 1, j + 1);
+                        d.Mensagens.Add(String.Format(DispositivoReconhecimentoTerrenoResource.MENSAGEM_ILHOTA_ESTRATEGICA, i + 1, j + 1));
                     }
                 }
             }
-            return DispositivoReconhecimentoTerrenoResource.MENSAGEM_NAO_POSSUI_ILHOTA_ESTRATEGICA;
+            d.Mensagens.Add(DispositivoReconhecimentoTerrenoResource.MENSAGEM_NAO_POSSUI_ILHOTA_ESTRATEGICA);
         }
     }
 }

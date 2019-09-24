@@ -61,7 +61,7 @@ namespace Dispositivo.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Favor inserir dados válidos..
+        ///   Looks up a localized string similar to Favor inserir dados válidos. Modelo de eexmplo para uma matriz 3 por 5: &quot;3 5&quot;.
         /// </summary>
         public static string ERRO_INPUT_INCORRETO {
             get {

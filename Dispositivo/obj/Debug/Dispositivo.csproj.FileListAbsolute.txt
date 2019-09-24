@@ -28,3 +28,15 @@ C:\Users\eric.loureiro\Desktop\RadarReconhecimentoDeTerreno-master\RadarReconhec
 C:\Users\eric.loureiro\Desktop\RadarReconhecimentoDeTerreno-master\RadarReconhecimentoDeTerreno-master\Dispositivo\obj\Debug\Dispositivo.csprojResolveAssemblyReference.cache
 C:\Users\eric.loureiro\Desktop\RadarReconhecimentoDeTerreno-master\RadarReconhecimentoDeTerreno-master\Dispositivo\obj\Debug\Dispositivo.Resource.DispositivoReconhecimentoTerrenoResource.resources
 C:\Users\eric.loureiro\Desktop\RadarReconhecimentoDeTerreno-master\RadarReconhecimentoDeTerreno-master\Dispositivo\obj\Debug\Dispositivo.csproj.GenerateResource.Cache
+C:\Users\eric.loureiro\Documents\GitHub\RadarReconhecimentoDeTerreno\Dispositivo\bin\Debug\Dispositivo.exe.config
+C:\Users\eric.loureiro\Documents\GitHub\RadarReconhecimentoDeTerreno\Dispositivo\obj\Debug\Dispositivo.exe
+C:\Users\eric.loureiro\Documents\GitHub\RadarReconhecimentoDeTerreno\Dispositivo\obj\Debug\Dispositivo.pdb
+C:\Users\eric.loureiro\Documents\GitHub\RadarReconhecimentoDeTerreno\Dispositivo\bin\Debug\Dispositivo.exe.manifest
+C:\Users\eric.loureiro\Documents\GitHub\RadarReconhecimentoDeTerreno\Dispositivo\bin\Debug\Dispositivo.application
+C:\Users\eric.loureiro\Documents\GitHub\RadarReconhecimentoDeTerreno\Dispositivo\bin\Debug\Dispositivo.exe
+C:\Users\eric.loureiro\Documents\GitHub\RadarReconhecimentoDeTerreno\Dispositivo\bin\Debug\Dispositivo.pdb
+C:\Users\eric.loureiro\Documents\GitHub\RadarReconhecimentoDeTerreno\Dispositivo\obj\Debug\Dispositivo.csprojResolveAssemblyReference.cache
+C:\Users\eric.loureiro\Documents\GitHub\RadarReconhecimentoDeTerreno\Dispositivo\obj\Debug\Dispositivo.Resource.DispositivoReconhecimentoTerrenoResource.resources
+C:\Users\eric.loureiro\Documents\GitHub\RadarReconhecimentoDeTerreno\Dispositivo\obj\Debug\Dispositivo.csproj.GenerateResource.Cache
+C:\Users\eric.loureiro\Documents\GitHub\RadarReconhecimentoDeTerreno\Dispositivo\obj\Debug\Dispositivo.exe.manifest
+C:\Users\eric.loureiro\Documents\GitHub\RadarReconhecimentoDeTerreno\Dispositivo\obj\Debug\Dispositivo.application

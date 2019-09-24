@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ERRO_INPUT_INCORRETO" xml:space="preserve">
-    <value>Favor inserir dados válidos.</value>
+    <value>Favor inserir dados válidos. Modelo de eexmplo para uma matriz 3 por 5: "3 5"</value>
   </data>
   <data name="LABEL_COLUNA" xml:space="preserve">
     <value>Coluna: </value>
