@@ -1,38 +1,29 @@
-# Reconhecimento-de-Terreno
+# Terrain-Recognition
 
-Você trabalha no Exército brasileiro e será o principal responsável pelo desenvolvimento de um software de reconhecimento de terreno. Esse software irá utilizar um novo dispositivo de radar adquirido. O dispositivo funciona de acordo com as seguintes especificações, descritas em seu manual:
+You work for the Brazilian Army and will be primarily responsible for developing terrain recognition software. 
+This software will use a newly acquired radar device. 
+The device operates according to the following specifications, described in its manual:
 
-1 – O dispositivo faz a leitura de uma área quadrada limitada de cada vez. Essa área é representada por matrizes 50x50, onde cada item representa 1 m² da área lida. O valor de cada item da matriz dependerá do tipo de leitura feita.
+1 – The device reads a limited square area at a time. This area is represented by matrices, where each item represents 1 m² of the area read. The value of each item in the matrix will depend on the type of reading performed.
+2 – A reading can be obtained to identify possible obstacles to passage in the area read, using the GetObstacleReading method. Each element in this matrix can assume the value “0”, if it does not correspond to an obstacle, or “1”, otherwise.
+3 – A reading of the probability of landmines in each m² of the region can be obtained, using the GetLandMineReading method. In this case, each element of the matrix will have a value from 0 to 100, corresponding to the probability of mines being present in that m².
+4 – A reading of the terrain type can be obtained. In this case, each element of the matrix will have the value “0”, if it corresponds to solid ground, or a numerical value above 0 if it corresponds to water, with the value representing the depth of the terrain covered by water in meters.
+5 – The methods for obtaining the reading are already ready in the device’s function library.
 
-2 – Pode ser obtida uma leitura para identificar possíveis obstáculos à passagem na área lida, utilizando o método ObterLeituraDeObstaculos. Cada elemento dessa matriz pode assumir o valor “0”, caso não corresponda a um obstáculo, ou “1”, caso contrário.
+In a meeting with an expert in this area, the following rules were established:
 
-3 – Pode ser obtida uma leitura da probabilidade de existirem minas terrestres em cada m² da região, utilizando o método ObterLeituraDeMinasTerrestres. Nesse caso, cada elemento da matriz possuirá um valor de 0 a 100, correspondente à probabilidade de existirem minas naquele m².
+1 – It is possible to cross one m² of terrain covered by water on foot if it is no more than 1 meter deep. It is not possible to cross one m² of terrain that contains obstacles on foot.
+2 – A terrain can be classified into 4 security levels:
 
-4 – Pode ser obtida uma leitura do tipo de terreno. Nesse caso, cada elemento da matriz possuirá o valor “0”, caso corresponda a terra firme, ou um valor numérico acima de 0 caso corresponda a água, sendo que o valor representa a profundidade do terreno coberto por água em metros.
+Level 1 – Safe area – There is no greater than a 50% chance of having a landmine anywhere on the terrain.
+Level 2 – Caution area – Unsafe area where up to 10% of the terrain area has a greater than 50% probability of having landmines.
+Level 3 – Dangerous area – 10 to 50% of the terrain area has a greater than 50% probability of having landmines.
+Level 4 – Not recommended area – More than 50% of the terrain area has a greater than 50% probability of having landmines.
 
-5 – Os métodos de obtenção de leitura já vem prontos na biblioteca de funções do dispositivo. 
+Based on these rules, the following are requested:
 
-	Em reunião com um especialista nessa área, foram levantadas as seguintes regras:
-
-1 – É possível atravessar a pé um m² do terreno coberto por água se ela tiver no máximo 1 metro de profundidade. Não é possível ultrapassar a pé um m² do terreno que contém obstáculos.
-
-2 – Um terreno pode ser classificado em 4 níveis de segurança:
-
-Nível 1 –Área segura – Não existe em nenhum local no terreno probabilidade maior que 50% de chance de ter uma mina terrestre.
-
-Nível 2 – Área de atenção – Área não segura onde até 10% da área do terreno tem uma probabilidade maior que 50% de ter minas terrestres.
-
-Nível 3 – Área perigosa – 10 a 50% da área do terreno tem uma probabilidade maior que 50% de ter minas terrestres.
-
-Nível 4 – Área não recomendada – Mais de 50% da área do terreno tem uma probabilidade maior que 50% de ter minas terrestres.
-
-Com base nessas regras, pede-se:
-6 – Desenvolva um algoritmo que faça a leitura de um terreno e informe o percentual de sua área coberta por água ou obstáculos.
-
-7 – Desenvolva um algoritmo que faça a leitura de um terreno e informe a profundidade média de toda sua área coberta por água.
-
-8 – Desenvolva um algoritmo que determine se um terreno pode ser ultrapassado a pé em linha reta. Caso a única linha reta onde seja possível ultrapassar o terreno possua algum m² com uma probabilidade maior que 10% de conter minas, o usuário deve ser avisado.
-
-9 - Desenvolva um algoritmo que faça a leitura de um terreno e informe seu nível de segurança.
-
-10 – Desenvolva um algoritmo que faça a leitura de um terreno e determine se no terreno existe uma ilhota estrategicamente útil. Uma ilhota é um espaço de 1m² de terra cercado de água por todos os lados. Só é estrategicamente útil se não possuir um obstáculo e possuir probabilidade 0 de conter minas.
+6 – Develop an algorithm that reads a terrain and reports the percentage of its area covered by water or obstacles.
+7 – Develop an algorithm that reads a terrain and reports the average depth of its entire area covered by water.
+8 – Develop an algorithm that determines whether a terrain can be crossed on foot in a straight line. If the only straight line where it is possible to cross the terrain has a m² with a probability greater than 10% of containing mines, the user must be warned.
+9 - Develop an algorithm that reads a terrain and informs its level of security.
+10 – Develop an algorithm that reads a terrain and determines whether there is a strategically useful islet on the terrain. An islet is a 1m² space of land surrounded by water on all sides. It is only strategically useful if it does not have an obstacle and has a 0 probability of containing mines.
