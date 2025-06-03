@@ -1,7 +1,9 @@
 # Terrain-Recognition
 
 You work for the Brazilian Army and will be primarily responsible for developing terrain recognition software. 
+
 This software will use a newly acquired radar device. 
+
 The device operates according to the following specifications, described in its manual:
 
 1 – The device reads a limited square area at a time. This area is represented by matrices, where each item represents 1 m² of the area read. The value of each item in the matrix will depend on the type of reading performed.
